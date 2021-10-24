@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<nav class="menu">
+    <a href="{% url 'home' %}">Back Home</a>
+    <a href="{% url 'addmanager' %}">Add Manager</a>
+    <a href="">Logout</a>
+</nav>
+<div class="divtable">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Status</th>
+        </tr>
+        {% for manager in manager %}
+        <tr>
+            <td>{{ manager.id }}</td>
+            <td>{{ manager.name }}</td>
+            <td>{{ manager.email }}</td>
+            <td>{{ manager.contact }}</td>
+            <td>{{ manager.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

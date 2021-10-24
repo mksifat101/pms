@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.lt {
+  font-size: 30px;
+}
+.loginform {
+  margin-top: 250px;
+  text-align: center;
+}
+input[type="text"],
+input[type="password"] {
+  border: 0;
+  width: 30%;
+  border-bottom: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  font-size: medium;
+}
+.btn {
+  width: 30%;
+  border: 0;
+  padding: 10px;
+  margin: 10px;
+  color: black;
+  background: rgb(109, 195, 221);
+  text-transform: uppercase;
+}
+.btn:hover {
+  background: rgb(54, 227, 240);
+}
+.menu {
+  text-align: center;
+  margin-top: 20px;
+}
+.menu a {
+  font-family: roboto;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px;
+  color: black;
+}
+.menu a:hover {
+  color: red;
+}
+.divtable {
+  margin-top: 150px;
+  offset: none;
+}
+.divtable table {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  border: 2px solid black;
+}
+.divtable table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+.divtable table th {
+  border: 1px solid black;
+  padding: 10px;
+}
+.addcm {
+  margin-top: 50px;
+  text-align: center;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"] {
+  border: 0;
+  width: 50%;
+  border-bottom: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  font-size: medium;
+}

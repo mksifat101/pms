@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<nav class="menu">
+    <a href="{% url 'home' %}">Back Home</a>
+    <a href="{% url 'project' %}">Project list</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</nav>
+<div class="addcm">
+    <h4 class="lt">ADD PROJECT</h4>
+    <form action="{% url 'addproject' %}" method="post">
+        {% csrf_token %}
+        <select name="company_id"
+            style="width: 51%; margin: 10px; padding: 10px; border: 0; border-bottom: 1px solid black;">
+            {% for company in company %}
+            <option value="{{ company.id }}" selected>{{ company.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <select name="category_id" id=""
+            style="width: 51%; margin: 10px; padding: 10px; border: 0; border-bottom: 1px solid black;">
+            {% for category in category %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="text" placeholder="Project Name" name="name">
+        <br>
+        <textarea name="description" id="" cols="30" rows="10" placeholder="Project Description"
+            style="width: 51%; margin: 10px; padding: 10px; border: 0; border-bottom: 1px solid black;"></textarea>
+        <br>
+        <select name="manager_id" id=""
+            style="width: 51%; margin: 10px; padding: 10px; border: 0; border-bottom: 1px solid black;">
+            {% for manager in manager %}
+            <option value="{{ manager.id }}">{{ manager.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="date" placeholder="Start Date" name="start_date"
+            style="width: 51%; margin: 10px; padding: 10px; border: 0; border-bottom: 1px solid black;">
+        <br>
+        <input type="date" placeholder="End Date" name="end_date"
+            style="width: 51%; margin: 10px; padding: 10px; border: 0; border-bottom: 1px solid black;">
+        <br>
+        <!-- <input type="email" placeholder="Company Email" name="email">
+        <br> -->
+
+        <!-- <input type="text" placeholder="Username" name="username">
+        <br>
+        <input type="password" placeholder="Password" name="password">
+        <br> -->
+        <!-- <input type="button" value="Add Company" class="btn"> -->
+        <button class="btn" type="submit" name="submit">Add Project</button>
+    </form>
+</div>
+
+{% endblock %}

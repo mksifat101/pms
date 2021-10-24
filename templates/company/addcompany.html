@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<nav class="menu">
+    <a href="{% url 'home' %}">Back Home</a>
+    <a href="{% url 'company' %}">Company list</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</nav>
+<div class="addcm">
+    <h4 class="lt">ADD A COMPANY</h4>
+    <form action="{% url 'addcompany' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Company Name" name="name">
+        <br>
+        <input type="file" placeholder="Company Logo" name="logo">
+        <br>
+        <input type="text" placeholder="Company Information" name="information">
+        <br>
+        <input type="text" placeholder="Company Website" name="website">
+        <br>
+        <input type="text" placeholder="Contact Info" name="contact">
+        <br>
+        <input type="email" placeholder="Company Email" name="email">
+        <br>
+        <!-- <input type="text" placeholder="Username" name="username">
+        <br>
+        <input type="password" placeholder="Password" name="password">
+        <br> -->
+        <!-- <input type="button" value="Add Company" class="btn"> -->
+        <button class="btn" type="submit" name="submit">Add Company</button>
+    </form>
+</div>
+
+{% endblock %}

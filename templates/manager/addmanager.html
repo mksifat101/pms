@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<nav class="menu">
+    <a href="{% url 'home' %}">Back Home</a>
+    <a href="{% url 'company' %}">Company list</a>
+    <a href="">Logout</a>
+</nav>
+<div class="addcm">
+    <h4 class="lt">ADD MANAGER</h4>
+    <form action="{% url 'addmanager' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Name" name="name">
+        <br>
+        <!-- <input type="file" placeholder="Company Logo" name="logo">
+        <br> -->
+        <!-- <input type="text" placeholder="Company Information" name="information">
+        <br>
+        <input type="text" placeholder="Company Website" name="website">
+        <br> -->
+        <input type="text" placeholder="Contact Info" name="contact">
+        <br>
+        <input type="email" placeholder="Company Email" name="email">
+        <br>
+        <select name="status" id=""
+            style="width: 51%; margin: 10px; padding: 10px; border: 0; border-bottom: 1px solid black;">
+            <option value="Active" selected>Active</option>
+            <option value="Pending">Pending</option>
+            <option value="Deactive">Deactive</option>
+        </select>
+        <br>
+        <!-- <input type="text" placeholder="Username" name="username">
+        <br>
+        <input type="password" placeholder="Password" name="password">
+        <br> -->
+        <!-- <input type="button" value="Add Company" class="btn"> -->
+        <button class="btn" type="submit" name="submit">Add Manager</button>
+    </form>
+</div>
+
+{% endblock %}

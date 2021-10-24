@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav class="menu">
+    <a href="{% url 'company' %}">Company</a>
+    <a href="{% url 'manager' %}">Manager</a>
+    <a href="{% url 'developer' %}">Developer</a>
+    <a href="{% url 'project' %}">Projects</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</nav>
+<div class="divtable">
+    <table>
+        <tr>
+            <td>
+                Name
+            </td>
+
+            <td>
+                Total
+            </td>
+        </tr>
+        <tr>
+            <td>
+                COMPANY
+            </td>
+
+            <td>
+                {{ company }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                MANAGER
+            </td>
+            <td>
+                {{ manager }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                DEVELOPER
+            </td>
+            <td>
+                {{ developer }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PROJECT
+            </td>
+            <td>
+                {{ project }}
+            </td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

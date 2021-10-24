@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<nav class="menu">
+    <a href="{% url 'home' %}">Back Home</a>
+    <a href="{% url 'addproject' %}">Add Project</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</nav>
+<div class="divtable">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Project Name</th>
+            <th>Manager</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        {% for project in project %}
+        <tr>
+            <td>{{ project.id }}</td>
+            <td>{{ project.company }}</td>
+            <td>{{ project.category }}</td>
+            <td>{{ project.name }}</td>
+            <td>{{ project.manager }}</td>
+            <td>{{ project.start_date }}</td>
+            <td>{{ project.end_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
